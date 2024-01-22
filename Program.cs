@@ -8,9 +8,24 @@ double roomLength = double.Parse(Console.ReadLine());
 Console.WriteLine("Enter Width (any unit)");
 double roomWidth = double.Parse(Console.ReadLine());
 
+Console.WriteLine("Enter Height");
+double roomHeight = double.Parse(Console.ReadLine());
+
 // assume input is valid
 double roomPerimeter = roomWidth * 2 + roomLength * 2;
 double roomArea = roomLength * roomWidth;
+
+// volume of the room
+// L x W x H
+double roomVolume = roomArea * roomHeight;
+
+// assume walls are in right angle
+double wallA = roomLength * roomHeight;
+double wallB = roomWidth * roomHeight;
+
+// surface area of the room
+double surfaceArea = (2 * roomArea) + (2 * wallA) + (2 * wallB); 
+
 
 if (roomArea <= 250)
 {
@@ -25,5 +40,7 @@ if (roomArea <= 250)
 
 Console.WriteLine($"Area {roomArea}");
 Console.WriteLine($"Perimeter {roomPerimeter}");
+Console.WriteLine($"Volume {roomVolume}");
+Console.WriteLine($"Surface Area {surfaceArea}");
 Console.WriteLine("------------------------------------------");
 Console.WriteLine("Thanks for using the Room Calculator Tool!");
